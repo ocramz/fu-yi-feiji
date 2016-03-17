@@ -23,7 +23,7 @@ before_install:
 
 install:
   - sudo apt-get update
-  - sudo apt-get install virtualbox-5.0
+  - sudo apt-get install -y virtualbox-5.0
 
   # # # d/l and install Vagrant
   - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
