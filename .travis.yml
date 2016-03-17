@@ -1,5 +1,5 @@
 sudo: 
-  false
+  required
 
 language: 
   c 
@@ -11,6 +11,13 @@ services:
 before_install:
   - export ACCOUNT=ocramz
 
+install:
+  - sudo apt-get update -q
+  - sudo apt-get install -q virtualbox --fix-missing
+  - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+  - sudo dpkg -i vagrant_1.7.2_x86_64.deb
+
 script:
   # # build Docker image
-  - make build ACCOUNT=$ACCOUNT
+  # - make build ACCOUNT=$ACCOUNT
+  - vagrant up
