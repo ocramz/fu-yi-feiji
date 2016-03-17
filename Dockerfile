@@ -16,9 +16,29 @@ RUN echo "deb https://apt.dockerproject.org/repo ubuntu-precise main" >> /etc/ap
 RUN apt-get update
 # Purge the old repo if it exists.
 
-RUN  apt-get purge lxc-docker
+RUN apt-get purge lxc-docker
 # Verify that APT is pulling from the right repository.
 
 RUN apt-cache policy docker-engine
 
 
+# # # 
+
+RUN sudo apt-get update
+#Install both the required and optional packages.
+
+RUN sudo apt-get install -y linux-image-generic-lts-trusty
+
+
+# # # 
+
+RUN sudo apt-get update
+# Install Docker.
+
+RUN sudo apt-get install docker-engine
+# Start the docker daemon.
+
+RUN sudo service docker start
+Verify docker is installed correctly.
+
+RUN sudo docker run hello-world
