@@ -12,10 +12,10 @@ before_install:
   - export ACCOUNT=ocramz
 
   - ls -lsA
-  - find ~ -name sources.list
+  # - find ~ -name sources.list
 
-  # update APT sources
-  # - sudo echo deb "http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list
+  # # # update APT sources
+  - sudo echo deb "http://download.virtualbox.org/virtualbox/debian trusty contrib" | sudo tee -a /etc/apt/sources.list
 
   - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 
@@ -25,11 +25,11 @@ install:
   - sudo apt-get update
   - sudo apt-get install virtualbox-5.0
 
-  # d/l and install Vagrant
-  # - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
-  # - sudo dpkg -i vagrant_1.7.2_x86_64.deb
+  # # # d/l and install Vagrant
+  - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+  - sudo dpkg -i vagrant_1.7.2_x86_64.deb
 
 script:
   # # # build Docker image
   # #- make build ACCOUNT=$ACCOUNT
-  # - vagrant up
+  - vagrant up
