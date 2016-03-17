@@ -39,6 +39,6 @@ RUN sudo apt-get install docker-engine
 # Start the docker daemon.
 
 RUN sudo service docker start
-Verify docker is installed correctly.
+# Verify docker is installed correctly.
 
 RUN sudo docker run hello-world
