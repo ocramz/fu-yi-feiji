@@ -26,10 +26,12 @@ install:
   - sudo apt-get install -y virtualbox-5.0
 
   # # # d/l and install Vagrant
-  - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
-  - sudo dpkg -i vagrant_1.7.2_x86_64.deb
+  # - sudo wget -nv https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+  # - sudo dpkg -i vagrant_1.7.2_x86_64.deb
 
 script:
   # # # build Docker image
   # #- make build ACCOUNT=$ACCOUNT
-  - vagrant up
+  # - vagrant up
+
+  - VBoxManage --version
